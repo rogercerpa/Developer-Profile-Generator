@@ -1,0 +1,19 @@
+{
+  "name": "developer-profile-generator",
+  "version": "1.0.0",
+  "description": "This command line application will generate a developers profile with basic information of their GitHub accounts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogercerpa/Developer-Profile-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rogercerpa/Developer-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/rogercerpa/Developer-Profile-Generator#readme"
+}
