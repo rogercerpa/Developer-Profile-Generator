@@ -15,8 +15,8 @@ inquirer
 		}
 	])
 	.then((userdata) => {
-		const username = userdata.username;
-		const usercolor = userdata.color;
+		const username =
+			userdata.username.toLowerCase().split('').join('') + '.json';
 		fs.writeFile(username, JSON.stringify(userdata, null, '\t'), function(err) {
 			if (err) {
 				return console.log(err);
