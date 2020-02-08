@@ -170,5 +170,8 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`;
+      </style>
+      <body>
+      
+      </body>`;
 }
