@@ -170,12 +170,5 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
-      <body>
-
-        
-      </body>
-      ;
-      
-      
+      </style>`;
 }
