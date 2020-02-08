@@ -19,10 +19,9 @@ async function githubinfo() {
 				choices : [ 'blue', 'green', 'pink', 'red' ]
 			}
 		]);
-		console.log(username);
 
 		const { data } = await axios.get(
-			`https://api.github.com/users/${username}/repos?per_page=100`
+			`https://api.github.com/users/${username}`
 		);
 
 		console.log(data);
