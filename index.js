@@ -1,10 +1,18 @@
 const axios = require('axios');
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const util = require('util');
-const htmlGenarator = require('./generateHTML');
+const util = require('util');
+const generator = require('./generateHTML');
+const pdf = require('html-pdf');
+const writeFileAsync = util.promisify(fs.writeFile);
 
-// const writeFileAsync = util.promisify(fs.writeFile);
+options = {
+	directory   : '/tmp',
+	height      : '8.7in',
+	width       : '9in',
+	format      : 'letter',
+	orientation : 'portrait'
+};
 
 const data = {};
 
@@ -47,14 +55,17 @@ function init() {
 
 			console.log(data);
 
-			const htmlinfo = htmlGenarator.generateHTML(data);
+			const html = generator.generateHTML(data);
 
-			fs.writeFile('index.html', htmlinfo, function(err) {
-				if (err) {
-					throw err;
-				} else {
-					console.log('html created');
-				}
-			});
+			return writeFileAsync('index.html', html);
+		})
+		.then(function() {
+			console.log('Successfully wrote to index.html');
+
+			html = generator.generateHTML(data);
+			pdf.create(html, options).toFile('Github-profile.pdf');
+		})
+		.catch(function(err) {
+			console.log(err);
 		});
 }
