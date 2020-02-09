@@ -34,16 +34,17 @@ function init() {
 		})
 		.then(function(API) {
 			data.profileimage = API.data.avatar_url;
-			// data.location = API.data.location;
-			// data.url = API.data.html_url;
-			// data.blog = API.data.blog;
-			// data.bio = API.data.bio;
-			// data.name = API.data.name;
-			// data.publicrepos = API.data.public_repos;
-			// data.followers = API.data.followers;
-			// data.stars = API.data.public_gists;
-			// data.following = API.data.following;
-			// data.company = API.data.company;
+			data.location = API.data.location;
+			data.url = API.data.html_url;
+			data.blog = API.data.blog;
+			data.bio = API.data.bio;
+			data.name = API.data.name;
+			data.publicrepos = API.data.public_repos;
+			data.followers = API.data.followers;
+			data.stars = API.data.public_gists;
+			data.following = API.data.following;
+			data.company = API.data.company;
+
 			console.log(data);
 
 			const htmlinfo = htmlGenarator.generateHTML(data);
@@ -57,37 +58,3 @@ function init() {
 			});
 		});
 }
-
-// .then((APIinfo)=>{
-// 	answers.
-
-// })
-
-// 		console.log(data);
-// 	catch (err) {
-// 		console.log(err);
-// 	}
-// }
-
-// 	.then(function(answers) {
-// 		const html = generateHTML(answers);
-// 		return writeFileAsync('index.html', html);
-// 	})
-// 	.then(function() {
-// 		console.log('html created');
-// 	})
-// 	.catch(function(err) {
-// 		console.log(err);
-// 	});
-
-// const questions = [
-
-// ];
-
-// function writeToFile(fileName, data) {
-
-// }
-
-// function init() {
-
-// init();
