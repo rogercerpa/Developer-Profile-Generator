@@ -179,14 +179,64 @@ function generateHTML(data) {
       <img class="photo-header img" src="${data.profileimage}">
 
       <div class="container">
-      <h1 class=photo-header h1"></h1>
-      <h1 class=photo-header h1"></h1>
-      <h2 class=photo-header h2" ></h2>
-      
+
+      <h1 >Hola</h1>
+      <h1>My name is ${data.name}</h1>
+      <h2>Currently working @ ${data.company}</h2>
+
+        <div class="links-nav">
+          <a class="nav-link" href="https://www.google.com/maps/place/${data.location}" target="_blank"></a>
+          <a class="nav-link" href="${data.url}" target="_blank">GitHub</a>
+          <a class="nav-link" href="${data.blog}" target="_blank">Blog</a>
+        </div>
       </div>
       </div>
 
+        <div class="container">
+        
+
+            <div class="main">
+
+                <div class="row">
+                  <h1>${data.bio}</h1>
+                </div>
+                
+                <div class="row">
+                   <div class="col">
+                      <div class="card">
+                         <h4> Public Repositories </h4>
+                         <h5> ${data.publicrepos} </h5>
+                      </div>
+                    </div>
+              
+
+                
+                   <div class="col">
+                      <div class="card">
+                         <h4> Followers </h4>
+                         <h5> ${data.followers} </h5>
+                      </div>
+                    </div>
+                </div>    
+
+                <div class="row">
+                   <div class="col">
+                      <div class="card">
+                         <h4> GitHub Stars </h4>
+                         <h5> ${data.public_gists} </h5>
+                      </div>
+                  </div>
+                
+                  <div class="col">
+                    <div class="card">
+                      <h4> Following </h4>
+                      <h5> ${data.following} </h5>
+                    </div>
+                  </div>
+                </div>
+        </div>
       </div>
+
       
       </body>`;
 }
